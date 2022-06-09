@@ -1,3 +1,42 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+
+h2 {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+/*Classes*/
 .hidden {
-    display: none
+    display: none;
+}
+.movie-card {
+    width: 23%;
+    padding: 15px;
+
+}
+
+/*IDs*/
+#main-title {
+    font-size: 60px;
+    margin: auto;
+    text-align: center;
+    padding: 25px 0px;
+}
+#movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#database-logo {
+    width:50%;
+}
+#search-area {
+
+    text-align: center;
+    
 }

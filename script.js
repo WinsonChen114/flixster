@@ -9,7 +9,7 @@ const exitSearchQS = document.querySelector("#exit-search")
 const apiKey = ""
 let page = 1
 //base url for images
-const base = "https://image.tmdb.org/t/p/w342"
+const base = "https://image.tmdb.org/t/p/original"
 //Text from search box
 let searchInput = ""
 
@@ -50,14 +50,25 @@ async function searchResults() {
 
 
     let response = await fetch("https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&language=en-US&query=" + searchInput + "&page=" + page + "&include_adult=false")
-    // console.log("response is: ")
-    // console.log(response)
+    console.log("response is: ")
+    console.log(response)
 
     let responseData = await response.json()
-    // console.log("responseData is: ")
-    // console.log(responseData)
+    console.log("responseData is: ")
+    console.log(responseData)
 
-    displayResults(responseData.results)
+
+    //If there are mvies to display, display them
+    if (responseData.results.length != 0) {
+        displayResults(responseData.results)
+    }
+    //else, let the user know that there are no movies
+    else {
+        movieGridQS.innerHTML = `
+        <h2>No results for</h2>
+        <h2>"${searchInput}"</h2>
+        <h2>Please try another search term</h2>`
+    }
 
     page++
 
@@ -66,10 +77,10 @@ async function searchResults() {
 //Display results from an array
 function displayResults(results) {
     //Adds each movie in the array
-    results.forEach((movie) => {
+    results.forEach((movie, index) => {
         movieGridQS.innerHTML += `
-        <div class = "movie-card">
-            <img src = ${base + movie.poster_path} class = movie-poster>
+        <div class = "movie-card" id = "card-${((page - 1) * 20) + index}">
+            <img src = ${base + movie.poster_path} class = movie-poster alt = "${movie.original_title}" title = "${movie.original_title}" width = 100% height = auto>
             <p class = movie-title>${movie.original_title}</p>
             <p class = movie-votes>${movie.vote_average}/10</p>
         </div>
@@ -100,6 +111,7 @@ function exitSearch(event) {
 
     //clears page for new movies
     movieGridQS.innerHTML = ''
+    searchInputQS.value = ''
 
     //reset page number
     page = 1;
@@ -107,16 +119,13 @@ function exitSearch(event) {
     loadCurrentlyPlaying(event)
 }
 
-function loadMore(event)
-{
+function loadMore(event) {
     //If in search mode
-    if(!(searchTitleQS.classList.contains("hidden")))
-    {
+    if (!(searchTitleQS.classList.contains("hidden"))) {
         searchResults()
     }
     //If in currently playing mode
-    else
-    {
+    else {
         loadCurrentlyPlaying(event)
     }
 }
