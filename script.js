@@ -6,6 +6,7 @@ const searchTitleQS = document.querySelector("#search-title")
 const nowPlayingQS = document.querySelector("#now-playing")
 const exitSearchQS = document.querySelector("#exit-search")
 
+
 const apiKey = ""
 let page = 1
 //base url for images
@@ -13,11 +14,12 @@ const base = "https://image.tmdb.org/t/p/original"
 //Text from search box
 let searchInput = ""
 
-//Checks if usere searches for a movie
+//Checks if user searches for a movie
 searchAreaQS.addEventListener("submit", handleFormSubmit)
 //Exiting Search
 exitSearchQS.addEventListener("click", exitSearch)
 moreButtonQS.addEventListener("click", loadMore)
+
 
 //Gets currently playing movies
 async function loadCurrentlyPlaying(event) {
@@ -31,6 +33,7 @@ async function loadCurrentlyPlaying(event) {
     // console.log(responseData)
 
     displayResults(responseData.results)
+    addEventListenerToCards()
 
     page++
 }
@@ -58,7 +61,7 @@ async function searchResults() {
     console.log(responseData)
 
 
-    //If there are mvies to display, display them
+    //If there are movies to display, display them
     if (responseData.results.length != 0) {
         displayResults(responseData.results)
     }
@@ -70,6 +73,8 @@ async function searchResults() {
         <h2>Please try another search term</h2>`
     }
 
+    addEventListenerToCards()
+
     page++
 
 }
@@ -79,7 +84,7 @@ function displayResults(results) {
     //Adds each movie in the array
     results.forEach((movie, index) => {
         movieGridQS.innerHTML += `
-        <div class = "movie-card" id = "card-${((page - 1) * 20) + index}">
+        <div class = "movie-card" id = "${((page - 1) * 20) + index}">
             <img src = ${base + movie.poster_path} class = movie-poster alt = "${movie.original_title}" title = "${movie.original_title}" width = 100% height = auto>
             <p class = "movie-title">${movie.original_title}</p>
             <p class = "movie-votes ${voteIdSelect(movie.vote_average)}">${movie.vote_average}/10</p>
@@ -133,20 +138,32 @@ function loadMore(event) {
 
 //Returns a ID depending on if the rating for a mvie is high, medium, or low
 //style.css will then use the id to assign the rating a color
-function voteIdSelect(rating)
-{
-    if(rating >= 8)
-    {
+function voteIdSelect(rating) {
+    if (rating >= 8) {
         return "high"
     }
-    else if(rating >= 6.5)
-    {
+    else if (rating >= 6.5) {
         return "medium"
     }
-    else
-    {
+    else {
         return "low"
     }
+}
+
+//Displayes popup with more information on a movie
+async function displayPopup(card) {
+    console.log("Clicked")
+    console.log(card.id)
+}
+
+//Adds event listeners to cards
+function addEventListenerToCards() {
+    const movieCardQS = document.querySelectorAll(".movie-card")
+    console.log(movieCardQS.length)
+    movieCardQS.forEach(card => {
+        card.addEventListener("click", () => displayPopup(card))
+        console.log("Added")
+    })
 }
 
 //Finds currently playing movies when page loads
