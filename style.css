@@ -13,10 +13,23 @@ h2 {
 .hidden {
     display: none;
 }
+
 .movie-card {
     width: 23%;
     padding: 15px;
 
+}
+
+.movie-votes.high {
+    color: lime
+}
+
+.movie-votes.medium {
+    color: orange
+}
+
+.movie-votes.low {
+    color: red
 }
 
 /*IDs*/
@@ -26,17 +39,20 @@ h2 {
     text-align: center;
     padding: 25px 0px;
 }
+
 #movie-grid {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
+
 #database-logo {
-    width:50%;
+    width: 50%;
 }
+
 #search-area {
 
     text-align: center;
-    
+
 }

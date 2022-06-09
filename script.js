@@ -81,8 +81,8 @@ function displayResults(results) {
         movieGridQS.innerHTML += `
         <div class = "movie-card" id = "card-${((page - 1) * 20) + index}">
             <img src = ${base + movie.poster_path} class = movie-poster alt = "${movie.original_title}" title = "${movie.original_title}" width = 100% height = auto>
-            <p class = movie-title>${movie.original_title}</p>
-            <p class = movie-votes>${movie.vote_average}/10</p>
+            <p class = "movie-title">${movie.original_title}</p>
+            <p class = "movie-votes ${voteIdSelect(movie.vote_average)}">${movie.vote_average}/10</p>
         </div>
         `
     })
@@ -119,6 +119,7 @@ function exitSearch(event) {
     loadCurrentlyPlaying(event)
 }
 
+//Loads more results
 function loadMore(event) {
     //If in search mode
     if (!(searchTitleQS.classList.contains("hidden"))) {
@@ -130,6 +131,23 @@ function loadMore(event) {
     }
 }
 
+//Returns a ID depending on if the rating for a mvie is high, medium, or low
+//style.css will then use the id to assign the rating a color
+function voteIdSelect(rating)
+{
+    if(rating >= 8)
+    {
+        return "high"
+    }
+    else if(rating >= 6.5)
+    {
+        return "medium"
+    }
+    else
+    {
+        return "low"
+    }
+}
 
 //Finds currently playing movies when page loads
 window.onload = loadCurrentlyPlaying

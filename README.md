@@ -29,8 +29,8 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
   - When a user hits 'Enter', it should send a search request to the movies API
   - The results from the search should be displayed on the page
   - There should be a close icon with an id of `close-search-btn` that exits the search, clears results, and shows the current movies displayed previously
-- [ ] Website accounts for basic HTML/CSS accessibility features
-- [] Website should be responsive
+- [X] Website accounts for basic HTML/CSS accessibility features
+- [X] Website should be responsive
 
 #### STRETCH FEATURES
 
