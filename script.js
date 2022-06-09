@@ -41,7 +41,7 @@ async function loadCurrentlyPlaying(event) {
 //When searches for a certain movie from the API
 async function searchResults() {
     searchInput = searchInputQS.value
-    console.log("searchInput is: " + searchInput)
+    // console.log("searchInput is: " + searchInput)
 
     //Changing the titles when searching for movies
     searchTitleQS.classList.remove("hidden")
@@ -53,12 +53,12 @@ async function searchResults() {
 
 
     let response = await fetch("https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&language=en-US&query=" + searchInput + "&page=" + page + "&include_adult=false")
-    console.log("response is: ")
-    console.log(response)
+    // console.log("response is: ")
+    // console.log(response)
 
     let responseData = await response.json()
-    console.log("responseData is: ")
-    console.log(responseData)
+    // console.log("responseData is: ")
+    // console.log(responseData)
 
 
     //If there are movies to display, display them
@@ -86,7 +86,7 @@ function displayResults(results) {
         movieGridQS.innerHTML += `
         <div class = "movie-card" id = "${((page - 1) * 20) + index}">
             <img src = ${base + movie.poster_path} class = movie-poster alt = "${movie.original_title}" title = "${movie.original_title}" width = 100% height = auto>
-            <p class = "movie-title">${movie.original_title}</p>
+            <p class = "movie-title">${movie.title}</p>
             <p class = "movie-votes ${voteIdSelect(movie.vote_average)}">${movie.vote_average}/10</p>
         </div>
         `
@@ -154,15 +154,37 @@ function voteIdSelect(rating) {
 async function displayPopup(card) {
     console.log("Clicked")
     console.log(card.id)
+
+    //Reverse Engineer the page num and index from the id of the card
+    let index = (card.id) % 20
+    let pageNum = (card.id - index) / 20 + 1
+
+    console.log("pageNum: " + pageNum)
+    console.log("index: " + index)
+
+    //Fetch more data from the API
+    let response
+    //If in search mode
+    if (!(searchTitleQS.classList.contains("hidden"))) {
+        response =  await fetch("https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&language=en-US&query=" + searchInput + "&page=" + pageNum + "&include_adult=false")
+    }
+    //If in currently playing mode
+    else {
+        response =  await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=" + apiKey + "&language=en-US&page=" + pageNum)
+    }
+
+    responseData = await response.json()
+    console.log(responseData)
+
 }
 
 //Adds event listeners to cards
 function addEventListenerToCards() {
     const movieCardQS = document.querySelectorAll(".movie-card")
-    console.log(movieCardQS.length)
+    // console.log(movieCardQS.length)
     movieCardQS.forEach(card => {
         card.addEventListener("click", () => displayPopup(card))
-        console.log("Added")
+        // console.log("Added")
     })
 }
 
