@@ -6,7 +6,7 @@ const searchTitleQS = document.querySelector("#search-title")
 const nowPlayingQS = document.querySelector("#now-playing")
 const exitSearchQS = document.querySelector("#exit-search")
 
-const apiKey = "a19e39d99902fd05af15d47024f06075"
+const apiKey = ""
 let page = 1
 //base url for images
 const base = "https://image.tmdb.org/t/p/w342"
@@ -17,6 +17,7 @@ let searchInput = ""
 searchAreaQS.addEventListener("submit", handleFormSubmit)
 //Exiting Search
 exitSearchQS.addEventListener("click", exitSearch)
+moreButtonQS.addEventListener("click", loadMore)
 
 //Gets currently playing movies
 async function loadCurrentlyPlaying(event) {
@@ -30,6 +31,8 @@ async function loadCurrentlyPlaying(event) {
     // console.log(responseData)
 
     displayResults(responseData.results)
+
+    page++
 }
 
 //When searches for a certain movie from the API
@@ -55,6 +58,8 @@ async function searchResults() {
     // console.log(responseData)
 
     displayResults(responseData.results)
+
+    page++
 
 }
 
@@ -98,8 +103,24 @@ function exitSearch(event) {
 
     //reset page number
     page = 1;
+
     loadCurrentlyPlaying(event)
 }
+
+function loadMore(event)
+{
+    //If in search mode
+    if(!(searchTitleQS.classList.contains("hidden")))
+    {
+        searchResults()
+    }
+    //If in currently playing mode
+    else
+    {
+        loadCurrentlyPlaying(event)
+    }
+}
+
 
 //Finds currently playing movies when page loads
 window.onload = loadCurrentlyPlaying
