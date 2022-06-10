@@ -10,7 +10,7 @@ const closePopUpQS = document.querySelector("#close-pop-up")
 const overlayQS = document.querySelector("#overlay")
 
 
-const apiKey = "a19e39d99902fd05af15d47024f06075"
+const apiKey = ""
 let page = 1
 //base url for api
 const apiBase = "https://api.themoviedb.org/3/"
