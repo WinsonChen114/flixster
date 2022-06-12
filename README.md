@@ -1,5 +1,3 @@
-📝 `NOTE` Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
-
 ## Week 1 Assignment: Flixster
 
 Submitted by: Winson Chen
@@ -35,30 +33,28 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 #### STRETCH FEATURES
 
 - [ ] Deploy website using GitHub Pages. 
-- [ ] Allow user to view more details about a movie within a popup.
-- [ ] Improve the user experience through CSS & animation.
-- [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
-- [ ] Implement anything else that you can get done to improve the app functionality!
+- [X] Allow user to view more details about a movie within a popup.
+- [X]] Improve the user experience through CSS & animation.
+- [X] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
+- [X] Implement anything else that you can get done to improve the app functionality!
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+![Website Demo](./img/website_demo.gif)
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The topics discussed in labs helped me a lot because it taught me how to do each part separately, such as the HTML, CSS and JS. Then, I had to put it all together for this project. However, there was still a bit of stuff that I felt unprepared for. I felt that not a lot of time was spent talking about different html elements, such as videos and images and what their attributes meant, such as the title or src attribute.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time, I would have probably made the website look better with more CSS, and added more animations to improve the user experience. I would also add links somewhere in the description to take the user to an official website, such as IMDb so they can learn mre about the movie if they are interested.  
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Presenting everything went well, but I think that mre time should be allocated to the demos because it felt kind of rushed, so I didn't get to show off everything I did. I noticed that some people had a lot of animations that I thought were cool, and someone also played background music, which was really unique.
 
 ### Open-source libraries used
 
