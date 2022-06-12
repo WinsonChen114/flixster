@@ -50,7 +50,7 @@ The topics discussed in labs helped me a lot because it taught me how to do each
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-If I had more time, I would have probably made the website look better with more CSS, and added more animations to improve the user experience. I would also add links somewhere in the description to take the user to an official website, such as IMDb so they can learn more about the movie if they are interested.  
+If I had more time, I would have probably made the website look better with more CSS, and added more animations to improve the user experience. I would also add links somewhere in the description to take the user to an official website, such as IMDb, so they can learn more about the movie if they are interested.  
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
