@@ -46,15 +46,15 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-The topics discussed in labs helped me a lot because it taught me how to do each part separately, such as the HTML, CSS and JS. Then, I had to put it all together for this project. However, there was still a bit of stuff that I felt unprepared for. I felt that not a lot of time was spent talking about different html elements, such as videos and images and what their attributes meant, such as the title or src attribute.
+The topics discussed in labs helped me a lot because it taught me how to do each part separately, such as the HTML, CSS and JS. Then, I had to put it all together for this project. However, there was still a bit of stuff that I felt unprepared for. I felt that not a lot of time was spent talking about different HTML elements, such as videos and images and what their attributes meant, such as the title or src attribute.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-If I had more time, I would have probably made the website look better with more CSS, and added more animations to improve the user experience. I would also add links somewhere in the description to take the user to an official website, such as IMDb so they can learn mre about the movie if they are interested.  
+If I had more time, I would have probably made the website look better with more CSS, and added more animations to improve the user experience. I would also add links somewhere in the description to take the user to an official website, such as IMDb so they can learn more about the movie if they are interested.  
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Presenting everything went well, but I think that mre time should be allocated to the demos because it felt kind of rushed, so I didn't get to show off everything I did. I noticed that some people had a lot of animations that I thought were cool, and someone also played background music, which was really unique.
+Presenting everything went well, but I think that more time should be allocated to the demos because it felt kind of rushed, so I didn't get to show off everything I did. I noticed that some people had a lot of animations that I thought were cool, and someone also played background music, which was really unique.
 
 ### Open-source libraries used
 
